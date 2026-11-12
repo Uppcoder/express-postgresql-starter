@@ -1,0 +1,17 @@
+{
+  "name": "express-postgresql-starter",
+  "version": "1.0.0",
+  "description": "A small Express app on PostgreSQL: a notes API, the database read from DATABASE_URL.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  }
+}
