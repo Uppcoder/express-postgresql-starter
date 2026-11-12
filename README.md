@@ -9,7 +9,7 @@ environment variable, `DATABASE_URL`, so no password sits in the code.
 | Endpoint | What it does |
 |---|---|
 | `GET /` | Says whether the database is connected |
-| `GET /health` | Runs a query and returns the PostgreSQL version |
+| `GET /status` | Runs a query and returns the PostgreSQL version |
 | `GET /notes` | Lists the notes |
 | `POST /notes` | Adds one: `{"text": "..."}` |
 | `DELETE /notes/:id` | Deletes one |
@@ -31,7 +31,7 @@ Press the button above: it opens Uppcoder's deploy page with this starter and Po
    `https://github.com/Uppcoder/express-postgresql-starter` (branch `main`).
 4. Deploy. Uppcoder clones the repository, runs `npm install`, sets `DATABASE_URL`
    and `PORT` and starts the app with `node index.js`.
-   Open the app's address and `/health` shows the database.
+   Open the app's address and `/status` shows the database.
 
 The full walk-through, with pictures:
 [Deploy an Express app with PostgreSQL, free](https://portal.uppcoder.com/guides/deploy-express-postgresql?utm_source=github&utm_medium=repo&utm_campaign=express-starter).
@@ -43,7 +43,7 @@ address instead.
 
 Uppcoder starts the first of these it finds: `index.js`, the file named in
 `package.json` `"main"`, `server.js`, `app.js`, `src/index.js`, else `npm start`.
-Listen on `process.env.PORT`, as almost every Express tutorial already does.
+Listen on `process.env.PORT`, as almost every Express tutorial already does. One path is taken: `/health` is answered by the platform itself (its health check), so give your own status route another name.
 
 ## Run it on your own machine
 

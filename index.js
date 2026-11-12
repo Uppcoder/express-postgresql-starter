@@ -41,11 +41,11 @@ app.get('/', (req, res) => {
   res.json({
     app: 'Express + PostgreSQL starter',
     database: pool ? 'connected' : 'not connected (DATABASE_URL is not set)',
-    try: ['GET /notes', 'POST /notes {"text": "..."}', 'GET /health'],
+    try: ['GET /notes', 'POST /notes {"text": "..."}', 'GET /status'],
   });
 });
 
-app.get('/health', async (req, res, next) => {
+app.get('/status', async (req, res, next) => {
   const p = db(res);
   if (!p) return;
   try {
